@@ -41,7 +41,7 @@ function App() {
                 </div>
             </div>
                 :
-                <Chat></Chat>
+                <Chat socket={socket} user={name} room={room}></Chat>
             }
     </div>
   );

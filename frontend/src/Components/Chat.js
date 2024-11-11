@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function Chat() {
+
+export default function Chat({ socket, user, room }) {
+  const [message, setMessage] = useState("")
+  const sendMessage = async () => {
+    if (message !== "") {
+        const messageData = {
+            room: room,
+            author: user,
+            message: message,
+            time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
+        }
+        await socket.emit("send-message", messageData);
+        setMessage("");
+    }
+}
+
   return (
     <div>
       <div className='header'></div>
@@ -8,8 +23,8 @@ export default function Chat() {
 
       <div className='body'></div>
       <div className='footer'>
-        <input style={{ width: '80%' }} type="text" placeholder='message...' ></input>
-        <button className="btn btn-success mb-3 px-4 mx-auto">Send</button>
+        <input style={{ width: '80%' }} type="text" placeholder='message...' value={message} onChange={(e) => setMessage(e.target.value)}></input>
+        <button className="btn btn-success mb-3 px-4 mx-auto" onClick={() => sendMessage()}>Send</button>
       </div>
     </div>
   )
