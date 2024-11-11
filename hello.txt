@@ -1,0 +1,1 @@
+To run the code "npm start" in frontend folder and "nodemon index" in backend.
