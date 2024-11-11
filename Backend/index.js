@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
     // console.log(socket.id, "joined room", data)
   })
   socket.on("send-message", (data) => {
-    console.log(data)
+    // console.log(data)
     socket.to(data.room).emit("receive-message", data)
   })
 })

@@ -4,6 +4,7 @@ import "./App.css";
 import { useState } from "react";
 import Chat from "./Components/Chat";
 
+
 const socket = io.connect("http://localhost:3001");
 
 function App() {
@@ -11,15 +12,15 @@ function App() {
   const [room, setRoom] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
   const joinRoom = () => {
     if (name && room) {
       socket.emit("join-room", room)
       setIsLoggedIn(true)
     }
+
   }
   return (
-    <div className="App">
+    <div className="App ">
       {!isLoggedIn ? <div>
         <div className="user-container text-center">
           <h1 className="mb-5">Chat Web</h1>

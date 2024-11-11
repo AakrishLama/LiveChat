@@ -11,3 +11,57 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.user-container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+.user-container input{
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 300px;
+    max-width: 80%; 
+    text-align:  left;
+}
+.user-container button {
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 300px;
+    max-width: 80%; 
+}
+.container {
+    height: 80vh; 
+    border: 2px solid rgb(10, 10, 10); 
+    padding: 20px; 
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+}
+
+.body {
+    flex: 1; /* Takes up the remaining space, pushing the footer to the bottom */
+    overflow-y: auto; /* Optional: allows scrolling when there are many messages */
+}
+
+.msg-container{
+    margin: 10px;
+    padding: 5px;
+    justify-content: right;
+    border-radius: 5px;
+    text-align: left;
+    background-color: grey;
+}
+.footer {
+    margin-top: auto; /* This ensures the footer stays at the bottom of the container */
+    display: flex;
+    align-items: center; /* Vertically centers the input and button */
+    width: 100%; /* Ensures the footer takes the full width */
+}
+
+.footer input {
+    width: 20px;
+}
