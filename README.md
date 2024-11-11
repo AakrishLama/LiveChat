@@ -17,7 +17,7 @@ Other: Socket.IO Client
 Prerequisites
 Ensure you have the following installed:
 
-Node.js
-npm
+- Node.js
+- npm
 
 To run the code use command "npm start" in frontend folder and "nodemon index" in backend.
