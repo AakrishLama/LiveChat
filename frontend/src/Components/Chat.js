@@ -34,7 +34,6 @@ export default function Chat({ socket, user, room }) {
     <div>
       <div className='header'></div>
       <h1>Welcome to Group {room}</h1>
-
       <div className='body'></div>
       {msgList.map((data, index) => {
         return (
@@ -62,7 +61,8 @@ export default function Chat({ socket, user, room }) {
       })}
       <hr className="my-3 border border-2 border-dark" style={{ width: '100%' }} />
       <div className='footer'>
-        <input style={{ width: '80%' }} type="text" placeholder='message...' value={message} onChange={(e) => setMessage(e.target.value)}></input>
+        <input style={{ width: '80%' }} type="text" placeholder='message...' value={message} onChange={(e) => setMessage(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' ? sendMessage() : null}></input>
         <button className="btn btn-success mb-3 px-4 mx-auto" onClick={() => sendMessage()}>Send</button>
       </div>
     </div>
